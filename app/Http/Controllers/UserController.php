@@ -21,7 +21,7 @@ class UserController extends Controller
     public function findOne(Request $request){
         $user = User::find($request->id);
 
-        return $user;
+        return $user->address;
     }
 
     /**
@@ -30,7 +30,7 @@ class UserController extends Controller
     public function create(Request $request)
     {
         //
-        $rawData = $request->only(['name','email','password']);
+        $rawData = $request->only(['name','email','password','address_id']);
         //$user->name = $rawData['name'];
         //$user->email = $rawData['email'];
         //$user->password = $rawData['password'];
